@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ui Framework presentation site</title>
+    <link rel="stylesheet"href="css/style25-05.css">
+    <link rel="stylesheet" href="css/FWpage.css">
+    <link rel="stylesheet"href="css/menu.css">
+</head>
+<body>
+<!--Navigation bar-->
+<div class="container">
+    <div class="nav">
+            <div class="s1">
+                <!--<div class ="logo">-->
+                    <!--<img  src="img/logo.png" onclick="main()">-->
+                <!--</div>-->
+                <div class = "text">
+                    <a href="index25-05.html">
+                        <img class="logo" src="img/FWsmaller1.png">
+                    </a>
+                    <!--<p class = "logoText">COLLAPSE</p>-->
+                </div>
+            </div>
+            <div>
+                <a class="underline" href="fw.html"><span class="menuTextLeft">UiFW</span></a>
+                <a class="underline" href="#"><span class="menuTextLeft">DOWNLOAD</span></a>
+            </div>
+            <div class="s2">
+                <p id="userNameNav"></p>
+            </div>
+            <div class="nav_list">
+                <a class="underline" href="about.html"><span class="menuTextRight">ABOUT</span></a>
+                <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
+                <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
+                <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
+                <button id="logButtonNav" class="regButton" onclick="openWinEnter()">LOG IN</button>
+                <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
+            </div>
+    </div>
+</div>
+
+<!--Modal windows: Registration -->
+    <div class="modalReg">
+        <div class="bord">
+        <form action="" method="" id="id01">
+            <h2>Create an account</h2>
+            <p class="info">Already have an account?  <a class="buttonModal" onclick="">LOG IN</a></p>
+            <span class="close" onclick="closeFormWin()">&times;</span>
+            <lable>Nickname</lable><br>
+            <input name="name" id="name"><br><br>
+            <lable>Password</lable><br>
+            <input type="password" name="password" id="password"><br><br>
+            <lable>Password confirmation</lable><br>
+            <input type="password" name="repPassword" id="repPassword"><br><br>
+            <lable>Email Address</lable><br>
+            <input name="mail" id="mail"><br><br>
+            <p class="errorNote" id ="errorName"></p>
+            <input type="button" class="formButton" value="SIGN UP NOW" onclick="validate()">
+        </form>
+    </div>
+</div>
+<!--Modal Enter: Log in/Log out-->
+<div class="modalEnter">
+    <div class="bord">
+        <form id="id02">
+            <span class="close" onclick="closeFormWin()">&times;</span>
+            <h2>Welcome back</h2>
+            <p class="info">Don't have an account? <a class="buttonModal" onclick="">SIGN UP</a></p>
+            <lable>Email</lable><br>
+            <input name="mail" id="mailEnter"><br><br>
+            <lable>Password</lable><br>
+            <input type="password" name="password" id="passwordEnter"><br><br>
+            <input type="checkbox" name="agree" value="agree" style="width: 15px;"/>
+            <lable for="agree">I agree to terms.</lable><br><br><br>
+            <p class="errorNote" id ="errorMailEnter"></p>
+            <p class="errorNote" id ="errorPassEnter"></p><br>
+            <input type="button" class="formButton" value="LOG IN NOW" onclick="validationEnter()"><br>
+            <p><a class="info" href="#">Forgot password?</a></p>
+        </form>
+    </div>
+</div>
+<!--Info Menu - Log in - user data-->
+    <div id="menu">
+        <div class="con1">
+            <p class="dataUserInfo s1 w1" id="userTextMain"></p><hr>
+            <p class="dataUserInfo w1" id="userDataText"></p>
+            <p class="dataUserInfo w1" id="MailDataText"></p>
+            <p class="dataUserInfo w1" id="PassDataText"></p>
+        </div>
+    </div>
+
+
+<!--main container-->
+<div id="main" class="main-container">
+    <img id="p1" class="imgMain" src="img/mainFont.jpg" style="display: block">
+</div>
+<!--FW container-->
+<div id="fw" class="fw-container" style="display: none">
+    <div class="container-fw">
+                <div class="box">
+                    <button id="b1" class="test-button" onclick="myfun()">CLICK ME</button>
+                </div>
+                <div class="box">
+                    <button id="b2" class="test-button" onclick="myfun1()">CLICK ME</button>
+                </div>
+                <div class="box">
+                    <input id="b3" type="button" id="b3" class="test-button" onclick="myfun2()" value="CLICK ME">
+                </div>
+                <div class="box"></div>
+        </div>
+    <div class="container-fw">
+        <div class="box b1">
+            <code>
+                <h3>.click-button{<br>
+                    background: green;<br>
+                    border: 0px;<br>
+                    color: white;<br>
+                    font-size:15px;<br>
+                    cursor: pointer;<br>
+                    width: 100px;<br>
+                    height: 100px;<br>
+                    border-radius: 50%;<br>
+                    transition: all 0.4s ease-in;<br>
+                    }</h3>
+            </code>
+        </div>
+        <div class="box b2">
+            <h3>This button ...</h3>
+        </div>
+        <div class="box b1">
+            <h3>This button ...</h3>
+        </div>
+        <div class="box b2">
+            <h3>This button ...</h3>
+        </div>
+    </div>
+    <div class="container-fw">
+        <div class="box b2">1</div>
+        <div class="box b1">2</div>
+        <div class="box b2">3</div>
+        <div class="box b1">4</div>
+
+    </div>
+</div>
+<!--Section Info Block-->
+<section class="infoBlock">
+    <div class="container-center">
+        <div class="newsBlock">
+            <div class="container-box">
+                <img class="imgInfoBlock" src="img/info5.png">
+                <a class="title"><h3>TypeScript as the future of enterprise javascript.</h3></a>
+                <a class="underline" href="#"><span class="infoLink">LEARN MORE</span>&nbsp;&rarr;</a>
+            </div>
+        </div>
+        <div class="newsBlock">
+            <div class="container-box">
+                <img class="imgInfoBlock" src="img/info2.png">
+                <a class="title"><h3>JavaScript is a programming language...</h3></a>
+                <a class="underline" href="#"><span class="infoLink">LEARN MORE</span>&nbsp;&rarr;</a>
+            </div>
+        </div>
+        <div class="newsBlock">
+            <div class="container-box">
+                <img class="imgInfoBlock" src="img/info3.jpg">
+                <a class="title"><h3>Control the Code Style of Your Team: ESLint in JavaScript.</h3></a>
+                <a class="underline" href="#"><span class="infoLink">LEARN MORE</span>&nbsp;&rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section Footer Block-->
+<section>
+    <div>
+
+    </div>
+</section>
+<!--footer - info - menu-->
+<footer>
+    <div class="nav">
+        <div>
+            <a class="f1">FIND US</a>&nbsp;|&nbsp;
+            <a class="menuTextRight" href="#">TWITTER</a>
+            <a class="menuTextRight" href="#">YOUTUBE</a>
+            <a class="menuTextRight" href="#">INSTAGRAM</a>
+        </div>
+        <div class="interval">
+
+        </div>
+        <div>
+            <p class="footer">© Copyright 2018 Framework. All rights reserved.</p>
+        </div>
+    </div>
+
+</footer>
+<!--My script-->
+<script type="text/javascript" src="js/study25-05.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<div id="scrollToTop" onclick="goUp();">GO UP</div>
+</body>
+</html>

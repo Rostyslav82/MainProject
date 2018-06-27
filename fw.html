@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ui Framework presentation site</title>
+    <link rel="stylesheet"href="css/style25-05.css">
+    <link rel="stylesheet" href="css/FWpage.css">
+    <link rel="stylesheet"href="css/menu.css">
+</head>
+<body>
+
+<!--Navigation bar - START!-->
+<div class="container">
+    <div class="nav">
+        <div class="s1">
+            <div class = "text">
+                <a href="index25-05.html">
+                    <img class="logo" src="img/FWsmaller1.png">
+                </a>
+            </div>
+        </div>
+        <div>
+            <a class="underline" href="fw.html"><span class="menuTextLeft">UiFW</span></a>
+            <a class="underline" href="#"><span class="menuTextLeft">DOWNLOAD</span></a>
+        </div>
+        <div class="s2">
+            <p id="userNameNav"></p>
+        </div>
+        <div class="nav_list">
+            <a class="underline" href="about.html"><span class="menuTextRight">ABOUT</span></a>
+            <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
+            <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
+            <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
+            <button id="logButtonNav" class="regButton" onclick="openWinEnter()">LOG IN</button>
+            <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
+        </div>
+    </div>
+</div>
+<!--Navigation bar - END!-->
+
+<!--Modal windows: Registration - START! -->
+<div class="modalReg">
+    <div class="bord">
+        <form action="" method="" id="id01">
+            <h2>Create an account</h2>
+            <p class="info">Already have an account?  <a class="buttonModal" onclick="">LOG IN</a></p>
+            <span class="close" onclick="closeFormWin()">&times;</span>
+            <lable>Nickname</lable><br>
+            <input name="name" id="name"><br><br>
+            <lable>Password</lable><br>
+            <input type="password" name="password" id="password"><br><br>
+            <lable>Password confirmation</lable><br>
+            <input type="password" name="repPassword" id="repPassword"><br><br>
+            <lable>Email Address</lable><br>
+            <input name="mail" id="mail"><br><br>
+            <p class="errorNote" id ="errorName"></p>
+            <input type="button" class="formButton" value="SIGN UP NOW" onclick="validate()">
+        </form>
+    </div>
+</div>
+<!--Modal Enter: Log in/Log out-->
+<div class="modalEnter">
+    <div class="bord">
+        <form id="id02">
+            <span class="close" onclick="closeFormWin()">&times;</span>
+            <h2>Welcome back</h2>
+            <p class="info">Don't have an account? <a class="buttonModal" onclick="">SIGN UP</a></p>
+            <lable>Email</lable><br>
+            <input name="mail" id="mailEnter"><br><br>
+            <lable>Password</lable><br>
+            <input type="password" name="password" id="passwordEnter"><br><br>
+            <input type="checkbox" name="agree" value="agree" style="width: 15px;"/>
+            <lable for="agree">I agree to terms.</lable><br><br><br>
+            <p class="errorNote" id ="errorMailEnter"></p>
+            <p class="errorNote" id ="errorPassEnter"></p><br>
+            <input type="button" class="formButton" value="LOG IN NOW" onclick="validationEnter()"><br>
+            <p><a class="info" href="#">Forgot password?</a></p>
+        </form>
+    </div>
+</div>
+<!--Info Menu - Log in - user data-->
+<div id="menu">
+    <div class="con1">
+        <p class="dataUserInfo s1 w1" id="userTextMain"></p><hr>
+        <p class="dataUserInfo w1" id="userDataText"></p>
+        <p class="dataUserInfo w1" id="MailDataText"></p>
+        <p class="dataUserInfo w1" id="PassDataText"></p>
+    </div>
+</div>
+<!--main container-->
+<div id="main" class="main-container">
+    <img id="p2" class="imgMain" src="img/main2.jpg" style="display: block">
+</div>
+<section>
+    <div>
+
+    </div>
+</section>
+<!--footer - info - menu-->
+<footer>
+    <div class="nav">
+        <div>
+            <a class="f1">FIND US</a>&nbsp;|&nbsp;
+            <a class="menuTextRight" href="#">TWITTER</a>
+            <a class="menuTextRight" href="#">YOUTUBE</a>
+            <a class="menuTextRight" href="#">INSTAGRAM</a>
+        </div>
+        <div class="interval">
+
+        </div>
+        <div>
+            <p class="footer">© Copyright 2018 Framework. All rights reserved.</p>
+        </div>
+    </div>
+
+</footer>
+<!--My script-->
+<script type="text/javascript" src="js/study25-05.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<!--GO UP-->
+<div id="scrollToTop" onclick="goUp();">GO UP</div>
+</body>
+</html>
