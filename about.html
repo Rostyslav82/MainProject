@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ui Framework presentation site</title>
-    <link rel="stylesheet"href="css/style25-05.css">
-    <link rel="stylesheet" href="css/FWpage.css">
-    <link rel="stylesheet"href="css/menu.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/backTop.js"></script>
+    <link rel="stylesheet" href="less/style.css">
+    <link rel="stylesheet" href="less/backTop.css">
 </head>
 <body>
 
@@ -14,14 +14,14 @@
     <div class="nav">
         <div class="s1">
             <div class = "text">
-                <a href="index25-05.html">
-                    <img class="logo" src="img/FWsmaller1.png">
+                <a href="index.html">
+                    <img class="logo" src="img/collapse1.png" title="HOME">
                 </a>
             </div>
         </div>
         <div>
-            <a class="underline" href="fw.html"><span class="menuTextLeft">UiFW</span></a>
-            <a class="underline" href="#"><span class="menuTextLeft">DOWNLOAD</span></a>
+            <a class="underline" href="#"><span class="menuTextLeft">Documentation</span></a>
+            <a class="underline" href="examples.html"><span class="menuTextLeft">Examples</span></a>
         </div>
         <div class="s2">
             <p id="userNameNav"></p>
@@ -30,8 +30,9 @@
             <a class="underline" href="about.html"><span class="menuTextRight">ABOUT</span></a>
             <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
             <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
+            <a class="underline" href="#"><span class="menuTextRight">NEWS</span></a>
             <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
-            <button id="logButtonNav" class="regButton" onclick="openWinEnter()">LOG IN</button>
+            <!--<button id="logButtonNav" class="LogInButton" onclick="openWinEnter()">LOG IN</button>-->
             <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
         </div>
     </div>
@@ -43,7 +44,7 @@
     <div class="bord">
         <form action="" method="" id="id01">
             <h2>Create an account</h2>
-            <p class="info">Already have an account?  <a class="buttonModal" onclick="">LOG IN</a></p>
+            <p class="info">Already have an account?  <a class="buttonModal" onclick="changeModalWinLog()">LOG IN</a></p>
             <span class="close" onclick="closeFormWin()">&times;</span>
             <lable>Nickname</lable><br>
             <input name="name" id="name"><br><br>
@@ -64,7 +65,7 @@
         <form id="id02">
             <span class="close" onclick="closeFormWin()">&times;</span>
             <h2>Welcome back</h2>
-            <p class="info">Don't have an account? <a class="buttonModal" onclick="">SIGN UP</a></p>
+            <p class="info">Don't have an account? <a class="buttonModal" onclick="changeModalWinSign()">SIGN UP</a></p>
             <lable>Email</lable><br>
             <input name="mail" id="mailEnter"><br><br>
             <lable>Password</lable><br>
@@ -89,14 +90,14 @@
 </div>
 <!--main container-->
 <div class="main-container">
-    <img id="p2" class="imgMain" src="img/main1.jpg" style="display: block">
-    <p><h2 class="aboutMain"><span><a class="m1">Frameworks</a> - an infrastructure of software solutions that facilitates<span class="spacer"></span><br>
-    <span class="spacer"></span>the development of complex systems. Simply put, this infrastructure can be<span class="spacer"></span><br>
-    <span class="spacer"></span>considered a kind of integrated library, but it has a number of limitations<span class="spacer"></span><br>
-    <span class="spacer"></span>that set the rules for creating a project structure and writing code.</span></h2></p>
+        <img id="p2" class="imgMain" src="img/main1.jpg" style="display: block">
+        <p><h2 class="aboutMain"><span><a class="m1">Frameworks</a> - an infrastructure of software solutions that facilitates<span class="spacer"></span><br>
+        <span class="spacer"></span>the development of complex systems. Simply put, this infrastructure can be<span class="spacer"></span><br>
+        <span class="spacer"></span>considered a kind of integrated library, but it has a number of limitations<span class="spacer"></span><br>
+        <span class="spacer"></span>that set the rules for creating a project structure and writing code.</span></h2></p>
 </div>
 <!--About container-->
-
+<h1>GET STARTED</h1>
 <section class="infoBlock">
     <div class="container-about-box">
         <div class="aboutBlockBox">
@@ -130,6 +131,40 @@
         </div>
     </div>
 </div>
+<!--Section Footer Block-->
+<section class="foo-block">
+    <div class="foo-container">
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline" href="#"><span class="menuTextLeft foo">DOCUMENTATION</span></a><br>
+                <a class="underline" href="examples.html"><span class="menuTextLeft foo">EXAMPLES</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline foo f2">ROOT</a>
+                <a class="underline" href="#"><span class="menuTextRight foo">SUPPORT</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">BLOG</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">NEWS</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline foo f2">ABOUT US</a>
+                <a class="underline" href="#"><span class="menuTextRight foo">COMPANY</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">GALLERY</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">SHOP</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a><img src="img/collapse1.png"></a><br>
+                <a class="foo">FRONT-END COMPONENT LIBRARY</a><br>
+                <a class="underline" href="#"><span class="menuTextRight foo"></span></a>
+            </div>
+        </div>
+    </div>
+</section>
 <!--footer - info - menu-->
 <footer>
     <div class="nav">
@@ -143,15 +178,14 @@
 
         </div>
         <div>
-            <p class="footer">© Copyright 2018 Framework. All rights reserved.</p>
+            <p class="footer">© Copyright 2018 COLLAPSE. All rights reserved.</p>
         </div>
     </div>
 
 </footer>
 <!--My script-->
-<script type="text/javascript" src="js/study25-05.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
-<!--GO UP-->
-<div id="scrollToTop" onclick="goUp();">GO UP</div>
+<script type="text/javascript" src="js/script.js"></script>
+<!--Animation button - up!-->
+<div id ="toTop" ><img class="upImg" src="img/icon_top.png"> </div>
 </body>
-</html></html>
+</html>

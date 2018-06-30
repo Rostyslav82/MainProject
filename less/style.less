@@ -21,6 +21,7 @@ h2{
 .imgMain{
   width: 100%;
   height: 600px;
+  transition: all ease 1s;
 }
 .regButton {
   cursor: pointer;
@@ -39,6 +40,24 @@ h2{
         box-shadow: 0 0 5px white;
         transition: 0.1s ease-in;
       }
+}
+.LogInButton{
+  cursor: pointer;
+  background: black;
+  color: white;
+  width: 80px;
+  border-radius: 60px;
+  border: none;
+  margin-right: 10px;
+  font-size:13px;
+  height: 20px;
+  &:hover {
+    color: green;
+    border: 2px solid green;
+    border-radius: 60px;
+    box-shadow: 0 0 5px white;
+    transition: 0.1s ease-in;
+  }
 }
 .aboutButton{
   border: 1px solid white;
@@ -79,13 +98,11 @@ h2{
   align-items: center;
   height: 70px;
   width: 1000px;
-  //border: 1px solid green;
 }
 .nav_list{
   display: flex;
   padding-right: 5px;
   align-items: center;
-
 }
 footer{
   display: flex;
@@ -94,19 +111,12 @@ footer{
   width: 100%;
   background: #0e1112;
 }
-section{
-  display: flex;
-  background: #181c1f;
-  height: 120px;
-  width: 100%;
-}
 .infoBlock{
   display: flex;
   height: 550px;
   width: 100%;
   background:#ffffff;
 }
-
 #list {
   display: flex;
   flex-direction: column;
@@ -144,8 +154,6 @@ input{
   justify-content: flex-start;
   width:100px;
 }
-
-
 #menu{
   width: 240px;
   position: absolute;
@@ -210,9 +218,15 @@ input{
 }
 //About - Main Picture - START!
 .main-container{
-  //display: flex;
+  display: flex;
   height: 600px;
-  position: relative;
+  //position: relative;
+}
+.main-container-shadow{
+  display: flex;
+  height: 100px;
+  background:black;
+  opacity: 0.8;
 }
 .aboutMain{
   position: absolute;
@@ -307,7 +321,7 @@ h2 span.spacer {
 
 //Modal windows - START!
 .buttonModal{
-margin-left: 10px;
+  margin-left: 10px;
   &:hover{
     color:green;
     cursor:pointer;
@@ -364,7 +378,7 @@ lable{
   top: -100%;
   padding: 50px;
   background-color: grey;
-  //opacity: 0.8;
+  opacity: 0.9;
   border: 0px;
   z-index: 2;
   transition: all 0.5s ease-in;
@@ -398,6 +412,10 @@ lable{
   align-items: center;
   justify-content: center;
   height: 130px;
+  &:hover{
+    opacity: 0.5;
+    transition: 0.2s ease-in;
+  }
 }
 .title{
   display: flex;
@@ -425,25 +443,13 @@ lable{
 }
 //Section - infoBlock - END!
 
-//Go Up - START!
-#scrollToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  //opacity: 0;
-  transition: all 0.5s ease-in;
-  color: white;
-  z-index: 6000;
-}
-//Go Up - END!
 //About - box -
 .container-about-box{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1000px;
+  //border: 1px solid red;
 }
 .aboutBlockBox{
   display: flex;
@@ -465,4 +471,74 @@ lable{
   color:#505050;
   text-transform:uppercase;
   font-size:14px;
+}
+//Section Footer Block
+.foo-block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #181c1f;
+  height: 140px;
+  width: 100%;
+}
+.foo-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+}
+.foo-box{
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  width: 180px;
+  height: 110px;
+  //box-shadow: 0 0 5px grey;
+}
+.foo-item{
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.foo{
+  font-size:11px;
+}
+.f2{
+  color: #a2a9af;
+}
+//slider
+#slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  //margin: 20px auto;
+  //padding: 0;
+  list-style: none;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in 0.1s;
+  left:0;
+}
+.slide img {
+  width: 100%;
+}
+.arrows {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+}
+.arrow {
+  position: absolute;
+  cursor: pointer;
+}
+.no_active {
+  color: red;
+}
+.next {
+  right: 0;
 }

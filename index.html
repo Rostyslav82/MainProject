@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ui Framework presentation site</title>
-    <link rel="stylesheet"href="css/style25-05.css">
-    <link rel="stylesheet" href="css/FWpage.css">
-    <link rel="stylesheet"href="css/menu.css">
+    <title>COLLAPSE : Front-End component library </title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/backTop.js"></script>
+    <link rel="stylesheet" href="less/style.css">
+    <link rel="stylesheet" href="less/backTop.css">
+
 </head>
-<body>
+<body id="top">
 <!--Navigation bar-->
 <div class="container">
     <div class="nav">
             <div class="s1">
-                <!--<div class ="logo">-->
-                    <!--<img  src="img/logo.png" onclick="main()">-->
-                <!--</div>-->
                 <div class = "text">
-                    <a href="index25-05.html">
-                        <img class="logo" src="img/FWsmaller1.png">
+                    <a href="index.html">
+                        <img class="logo" src="img/collapse1.png" title="HOME">
                     </a>
-                    <!--<p class = "logoText">COLLAPSE</p>-->
                 </div>
             </div>
             <div>
-                <a class="underline" href="fw.html"><span class="menuTextLeft">UiFW</span></a>
-                <a class="underline" href="#"><span class="menuTextLeft">DOWNLOAD</span></a>
+                <a class="underline" href="#"><span class="menuTextLeft">Documentation</span></a>
+                <a class="underline" href="examples.html"><span class="menuTextLeft">Examples</span></a>
             </div>
             <div class="s2">
                 <p id="userNameNav"></p>
@@ -33,19 +31,19 @@
                 <a class="underline" href="about.html"><span class="menuTextRight">ABOUT</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
+                <a class="underline" href="#"><span class="menuTextRight">NEWS</span></a>
                 <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
-                <button id="logButtonNav" class="regButton" onclick="openWinEnter()">LOG IN</button>
+                <!--<button id="logButtonNav" class="LogInButton" onclick="openWinEnter()">LOG IN</button>-->
                 <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
             </div>
     </div>
 </div>
-
 <!--Modal windows: Registration -->
     <div class="modalReg">
         <div class="bord">
         <form action="" method="" id="id01">
             <h2>Create an account</h2>
-            <p class="info">Already have an account?  <a class="buttonModal" onclick="">LOG IN</a></p>
+            <p class="info">Already have an account?  <a class="buttonModal" onclick="changeModalWinLog()">LOG IN</a></p>
             <span class="close" onclick="closeFormWin()">&times;</span>
             <lable>Nickname</lable><br>
             <input name="name" id="name"><br><br>
@@ -66,7 +64,7 @@
         <form id="id02">
             <span class="close" onclick="closeFormWin()">&times;</span>
             <h2>Welcome back</h2>
-            <p class="info">Don't have an account? <a class="buttonModal" onclick="">SIGN UP</a></p>
+            <p class="info">Don't have an account? <a class="buttonModal" onclick="changeModalWinSign()">SIGN UP</a></p>
             <lable>Email</lable><br>
             <input name="mail" id="mailEnter"><br><br>
             <lable>Password</lable><br>
@@ -89,59 +87,27 @@
             <p class="dataUserInfo w1" id="PassDataText"></p>
         </div>
     </div>
-
-
 <!--main container-->
 <div id="main" class="main-container">
-    <img id="p1" class="imgMain" src="img/mainFont.jpg" style="display: block">
+    <!--<img name="slide" class="imgMain">-->
+    <ul id="slider">
+        <li class="slide active">
+            <img class="imgMain" src="img/mainFont.jpg">
+        </li>
+        <li class="slide">
+            <img class="imgMain" src="img/main3.jpg">
+        </li>
+        <li class="slide">
+            <img class="imgMain" src="img/main4.jpg">
+        </li>
+    </ul>
+    <!--<div class="arrows">-->
+        <!--<span class="arrow next" id="next">Вправо</span>-->
+        <!--<span class="arrow prew" id="prew">Влево</span>-->
+    <!--</div>-->
 </div>
-<!--FW container-->
-<div id="fw" class="fw-container" style="display: none">
-    <div class="container-fw">
-                <div class="box">
-                    <button id="b1" class="test-button" onclick="myfun()">CLICK ME</button>
-                </div>
-                <div class="box">
-                    <button id="b2" class="test-button" onclick="myfun1()">CLICK ME</button>
-                </div>
-                <div class="box">
-                    <input id="b3" type="button" id="b3" class="test-button" onclick="myfun2()" value="CLICK ME">
-                </div>
-                <div class="box"></div>
-        </div>
-    <div class="container-fw">
-        <div class="box b1">
-            <code>
-                <h3>.click-button{<br>
-                    background: green;<br>
-                    border: 0px;<br>
-                    color: white;<br>
-                    font-size:15px;<br>
-                    cursor: pointer;<br>
-                    width: 100px;<br>
-                    height: 100px;<br>
-                    border-radius: 50%;<br>
-                    transition: all 0.4s ease-in;<br>
-                    }</h3>
-            </code>
-        </div>
-        <div class="box b2">
-            <h3>This button ...</h3>
-        </div>
-        <div class="box b1">
-            <h3>This button ...</h3>
-        </div>
-        <div class="box b2">
-            <h3>This button ...</h3>
-        </div>
-    </div>
-    <div class="container-fw">
-        <div class="box b2">1</div>
-        <div class="box b1">2</div>
-        <div class="box b2">3</div>
-        <div class="box b1">4</div>
+<div class="main-container-shadow">
 
-    </div>
 </div>
 <!--Section Info Block-->
 <section class="infoBlock">
@@ -170,32 +136,59 @@
     </div>
 </section>
 <!--Section Footer Block-->
-<section>
-    <div>
-
+<section class="foo-block">
+    <div class="foo-container">
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline" href="fw.html"><span class="menuTextLeft foo">DOCUMENTATION</span></a><br>
+                <a class="underline" href="#"><span class="menuTextLeft foo">EXAMPLES</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline foo f2">ROOT</a>
+                <a class="underline" href="#"><span class="menuTextRight foo">SUPPORT</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">BLOG</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">NEWS</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a class="underline foo f2">ABOUT US</a>
+                <a class="underline" href="#"><span class="menuTextRight foo">COMPANY</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">GALLERY</span></a>
+                <a class="underline" href="#"><span class="menuTextRight foo">SHOP</span></a>
+            </div>
+        </div>
+        <div class="foo-box">
+            <div class="foo-item">
+                <a><img src="img/collapse1.png"></a><br>
+                <a class="foo">FRONT-END COMPONENT LIBRARY</a><br>
+                <a class="underline" href="#"><span class="menuTextRight foo"></span></a>
+            </div>
+        </div>
     </div>
 </section>
 <!--footer - info - menu-->
 <footer>
     <div class="nav">
         <div>
-            <a class="f1">FIND US</a>&nbsp;|&nbsp;
+            <a class="f1 f2">FIND US</a>&nbsp;|&nbsp;
             <a class="menuTextRight" href="#">TWITTER</a>
             <a class="menuTextRight" href="#">YOUTUBE</a>
             <a class="menuTextRight" href="#">INSTAGRAM</a>
         </div>
         <div class="interval">
-
         </div>
         <div>
-            <p class="footer">© Copyright 2018 Framework. All rights reserved.</p>
+            <p class="footer">© Copyright 2018 COLLAPSE. All rights reserved.</p>
         </div>
     </div>
 
 </footer>
 <!--My script-->
-<script type="text/javascript" src="js/study25-05.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
-<div id="scrollToTop" onclick="goUp();">GO UP</div>
+<script type="text/javascript" src="js/script.js"></script>
+<!--Animation button - up!-->
+<div id ="toTop" ><img class="upImg" src="img/icon_top.png"> </div>
 </body>
 </html>

@@ -88,7 +88,7 @@ function validate() {
         //document.getElementById("errorMail").innerHTML = "";
         //document.getElementById("errorPass").innerHTML = "";
         closeFormWin();
-
+        openWinEnter();
     }
 }
 //Put entered user data in localStorage.
@@ -182,7 +182,7 @@ function closeFormWin() {
     overflow.remove();
 
 }
-//Function for modal windows - data user
+//Function for modal windows - data user - START!
 window.onload = function(){
     document.querySelector('#userNameNav').onmouseover = menuShow;
     document.querySelector('#userNameNav').onmouseout = menuHide;
@@ -196,64 +196,77 @@ window.onload = function(){
     function menuHide(){
         document.querySelector('#menu').style.left = '-230px';
     }
-};
-// function fw() {
-//         document.getElementById('main').style.display = "none";
-//         document.getElementById('fw').style.display = "block";
-//         document.getElementById('about').style.display = "none";
+}
+//Function for modal windows - data user - END!
+
+//MAIN - carousel - START!
+var i = 0;
+var images = [];
+var time = 4000;
+
+images[0] = "img/mainFont.jpg";
+images[1] = "img/main3.jpg";
+images[2] = "img/main4.jpg";
+images[3] = "img/main1.jpg";
+
+function changeImg(){
+    document.slide.src = images[i];
+    if(i < images.length - 1){
+        i++;
+    } else {
+        i = 0;
+    }
+
+    setTimeout("changeImg()", time);
+}
+window.onload=changeImg;
+//MAIN - carousel - END!
+
+// Change Modal Window : Registration and login - START!
+function changeModalWinLog() {
+    closeFormWin();
+    openWinEnter();
+}
+function changeModalWinSign() {
+    closeFormWin();
+    openWin();
+}
+// Change Modal Window : Registration and login - END!
+
+//slider
+var next = document.getElementById('next');
+// var prew = document.getElementById('prew');
+
+var slides = document.getElementsByClassName('slide');
+for(var i=0; i<slides.length; i++){
+    slides[i].style.zIndex = (slides.length) - i;
+}
+
+function nextSlide() {
+    var activeEl = document.querySelector('.active');
+    if(activeEl.nextElementSibling) {
+        activeEl.style.left = "-100%";
+        activeEl.classList.remove('active');
+        activeEl.nextElementSibling.classList.add('active');
+        this.classList.remove('no_active');
+        prew.classList.remove('no_active');
+        if(!activeEl.nextElementSibling.nextElementSibling) {
+            this.classList.add('no_active');
+        }
+    }
+}
+// function prewSlide() {
+//     var activeEl = document.querySelector('.active');
+//     if(activeEl.previousElementSibling) {
+//         activeEl.previousElementSibling.style.left = "0%";
+//         activeEl.classList.remove('active');
+//         activeEl.previousElementSibling.classList.add('active');
+//         this.classList.remove('no_active');
+//         next.classList.remove('no_active');
+//         if(!activeEl.previousElementSibling.previousElementSibling) {
+//             this.classList.add('no_active');
+//         }
+//     }
 // }
-// function main() {
-//         document.getElementById('main').style.display = "block";
-//         document.getElementById('fw').style.display = "none";
-//         document.getElementById('about').style.display = "none";
-// }
-// function about() {
-//         document.getElementById('main').style.display = "none";
-//         document.getElementById('fw').style.display = "none";
-//         document.getElementById('about').style.display = "block";
-// }
-// FW page
-function myfun() {
-    var but = document.getElementById("b1").className;
-    if (but == "test-button") {
-        document.getElementById("b1").className = "click-button";
-    } else {
-        document.getElementById("b1").className = "test-button";
-    }
-}
-function myfun1() {
-    var but = document.getElementById("b2").className;
-    if (but == "test-button") {
-        document.getElementById("b2").className = "click-button2";
-    } else {
-        document.getElementById("b2").className = "test-button";
-    }
-}
-function myfun2() {
-    var but = document.getElementById("b3").className;
-    if (but == "test-button") {
-        document.getElementById("b3").className = "click-button3";
-        document.getElementById("b3").value = "TEST";
-    } else {
-        document.getElementById("b3").className = "test-button";
-        document.getElementById("b3").value = "CLICK ME";
-    }
-}
-//Go Up - START!
-window.onscroll = function() {
-    var scrollElem = document.getElementById("scrollToTop");
-    if (document.body.scrollTop > document.documentElement.clientHeight) {
-        scrollElem.style.opacity = "1";
-    } else {
-        scrollElem.style.opacity = "0";
-    }
-}
-var timeOut;
-function goUp() {
-    var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
-    if(top > 0) {
-        window.scrollBy(0,-100);
-        timeOut = setTimeout('goUp()',20);
-    } else clearTimeout(timeOut);
-}
-//Go Up - END!
+window.onload=nextSlide;
+setTimeout("nextSlide()", 4000);
