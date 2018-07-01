@@ -12,6 +12,7 @@ p {
 h1 {
   text-align: center;
   padding-top: 25px;
+  color: #a2a9af;
 }
 h2 {
   color: #1F6ED4;
@@ -213,12 +214,24 @@ input {
 .main-container {
   display: flex;
   height: 600px;
+  z-index: 1000;
+}
+.main-container-text {
+  text-align: center;
+  padding-top: 25px;
+  color: white;
 }
 .main-container-shadow {
   display: flex;
-  height: 100px;
+  position: absolute;
+  bottom: 82px;
+  height: 150px;
+  width: 100%;
   background: black;
-  opacity: 0.8;
+  opacity: 0.5;
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
 }
 .aboutMain {
   position: absolute;
@@ -234,7 +247,7 @@ h2 span {
   padding: 10px;
 }
 h2 span.spacer {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 .m1 {
   color: #EC7700;
@@ -361,7 +374,7 @@ lable {
   background-color: grey;
   opacity: 0.9;
   border: 0px;
-  z-index: 2;
+  z-index: 5000;
   transition: all 0.5s ease-in;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -383,6 +396,7 @@ lable {
   width: 315px;
   height: 290px;
   box-shadow: 0 0 5px grey;
+  border-radius: 5%;
 }
 .imgInfoBlock {
   margin-top: 20px;
@@ -424,12 +438,13 @@ lable {
   justify-content: center;
   align-items: center;
   width: 1000px;
+  border: 1px solid red;
 }
 .aboutBlockBox {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 900px;
+  width: 500px;
   height: 350px;
   box-shadow: 0 0 5px grey;
 }
@@ -464,14 +479,18 @@ lable {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 180px;
-  height: 110px;
+  height: 90px;
+  border-left: 1px dashed #505050;
+  padding-left: 20px;
+}
+.foo-box-line {
+  border-left: none;
 }
 .foo-item {
   display: flex;
   align-items: left;
   flex-direction: column;
-  margin-top: 10px;
+  height: 100%;
 }
 .foo {
   font-size: 11px;
@@ -491,7 +510,7 @@ lable {
   width: 100%;
   height: 100%;
   transition: all 1s ease-in 0.1s;
-  left: 0;
+  left: 0px;
 }
 .slide img {
   width: 100%;
@@ -510,5 +529,13 @@ lable {
 }
 .next {
   right: 0;
+}
+.about-container-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  margin-bottom: 20px;
+  border: 1px solid red;
 }
 /*# sourceMappingURL=style.css.map */
