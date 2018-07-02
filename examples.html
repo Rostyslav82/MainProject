@@ -39,7 +39,11 @@
     </div>
 </div>
 <!--Navigation bar - END!-->
-
+<section class="nav-block">
+    <div class="nav-block-container">
+        <div class="navigation"><a class="navigation" href="index.html">HOME</a> &nbsp; &nbsp; >>  <a class="navigation" href="examples.html">EXAMPLE</a> </div>
+    </div>
+</section>
 <!--Modal windows: Registration - START! -->
 <div class="modalReg">
     <div class="bord">
@@ -93,32 +97,69 @@
 <div id="main" class="main-container">
     <img id="p2" class="imgMain" src="img/main2.jpg" style="display: block">
 </div>
-<h1>BROWSE BY CATEGORIES</h1>
+<h1></h1>
 <section class="example-block">
     <div class="example-container">
         <div class="example-box-fixed">
             <table>
                 <ul class="example-table">
                     <li class="example-list-bold">GETTING STARTED</li><br><br>
-                    <li class="example-list">Introduction</li><br>
-                    <li class="example-list">Components</li><br>
-                    <li class="example-list">Contents</li><br>
-                    <li class="example-list">Utilities</li><br>
+                    <li class="example-list">&nbsp;&nbsp;&nbsp;<a onclick="under()">Underline</a></li><br>
+                    <li class="example-list">&nbsp;&nbsp;&nbsp;Collapse</li><br>
+                    <li class="example-list">&nbsp;&nbsp;&nbsp;<a onclick="modal()">Modal Windows</a></li><br>
+                    <li class="example-list">&nbsp;&nbsp;&nbsp;Button</li><br>
                 </ul>
             </table>
         </div>
-        <div class="example-box">
+        <div id="line" class="example-box">
             <div class="example-item">
-                <h3>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuuueeeeee</h3>
+                <h3>UNDERLINE</h3>
+                <img class="example-img" src="img/nav3.png">
                 <a>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
                 <a>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
+                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
+                <div class="example-item-code">
+                    <p class="example-item-text">.menuTextLeft{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: #a2a9af;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-size:15px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;margin-right: 15px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration:none;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:hover{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 2px solid yellow;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: 0.1s ease-in;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </p>
+                </div>
+                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
+                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
+                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
+            </div>
+        </div>
+        <div id="modal" class="example-box" style="display: none">
+            <div class="example-item">
+                <h3>MODAL WINDOWS</h3>
+                <img class="example-img-modal" src="img/signUp.png">
+                <a>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
                 <a>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
                 <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
-                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
-                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
-                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
-                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
-                <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
+                <div class="example-item-code">
+                    <p class="example-item-text">.menuTextLeft{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: #a2a9af;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-size:15px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;margin-right: 15px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration:none;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:hover{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 2px solid yellow;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: 0.1s ease-in;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </p>
+                </div>
                 <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
                 <h4>22222222eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h4>
             </div>
@@ -129,7 +170,7 @@
 <!--Section Footer Block-->
 <section class="foo-block">
     <div class="foo-container">
-        <div class="foo-box">
+        <div class="foo-box foo-box-line">
             <div class="foo-item">
                 <a class="underline" href="#"><span class="menuTextLeft foo">DOCUMENTATION</span></a><br>
                 <a class="underline" href="examples.html"><span class="menuTextLeft foo">EXAMPLES</span></a>
@@ -181,6 +222,6 @@
 <!--My script-->
 <script type="text/javascript" src="js/script.js"></script>
 <!--Animation button - up!-->
-<div id ="toTop" ><img class="upImg" src="img/icon_top.png"> </div>
+<div id ="toTop" ><img class="upImg" src="img/icon_top.png" title="GO UP"> </div>
 </body>
 </html>

@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="less/style.css">
     <link rel="stylesheet" href="less/backTop.css">
     <link rel="stylesheet" href="less/style_example.css">
-
+    <link rel="stylesheet" href="less/slider-main.css">
 </head>
-<body id="top">
-<!--Navigation bar-->
+<body>
+<!--Navigation bar - START!-->
 <div class="container">
     <div class="nav">
             <div class="s1">
@@ -38,6 +38,13 @@
             </div>
     </div>
 </div>
+<!--Navigation bar - END!-->
+<section class="nav-block">
+    <div class="nav-block-container">
+        <div class="navigation"><a class="navigation" href="index.html">HOME</a> &nbsp; &nbsp;  >> </div>
+    </div>
+</section>
+
 <!--Modal windows: Registration -->
     <div class="modalReg">
         <div class="bord">
@@ -87,30 +94,61 @@
             <p class="dataUserInfo w1" id="PassDataText"></p>
         </div>
     </div>
-<!--main container-->
-<div id="main" class="main-container">
-    <!--<img name="slide" class="imgMain">-->
-    <ul id="slider">
-        <li class="slide active">
-            <img class="imgMain" src="img/mainFont.jpg">
-        </li>
-        <li class="slide">
-            <img class="imgMain" src="img/main3.jpg">
-        </li>
-        <li class="slide">
-            <img class="imgMain" src="img/main4.jpg">
-        </li>
-    </ul>
-</div>
-<div class="main-container-shadow">
-    <div class="container-center">
-        <h1 class="main-container-text">It makes things like HTML document traversal and manipulation, event handling,
-            animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. </h1>
+<!--Main Page - Slider START!-->
+    <div id="slider">
+        <div class="slides">
+            <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                    <div class="content-txt">
+                        <h1>COMPATIBILITY</h1>
+                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/mainFont.jpg">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                    <div class="content-txt">
+                        <h1>FUNCTIONALITY</h1>
+                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/info1.gif">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                    <div class="content-txt">
+                        <h1>INNOVATION</h1>
+                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/idea1.jpg">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                    <div class="content-txt">
+                        <h1>MODULARITY</h1>
+                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="img/puzzle.jpg">
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="foo-block">
+<!--Main Page - Slider END!-->
 
-</div>
 <!--Section Info Block-->
 <section class="infoBlock">
     <div class="container-center">
@@ -191,6 +229,6 @@
 <!--My script-->
 <script type="text/javascript" src="js/script.js"></script>
 <!--Animation button - up!-->
-<div id ="toTop" ><img class="upImg" src="img/icon_top.png"> </div>
+<div id ="toTop" ><img class="upImg" src="img/icon_top.png" title="GO UP"> </div>
 </body>
 </html>

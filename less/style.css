@@ -379,6 +379,7 @@ lable {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .infoBlock {
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -436,9 +437,9 @@ lable {
 .container-about-box {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 1000px;
-  border: 1px solid red;
 }
 .aboutBlockBox {
   display: flex;
@@ -498,38 +499,6 @@ lable {
 .f2 {
   color: #a2a9af;
 }
-#slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 600px;
-  list-style: none;
-}
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: all 1s ease-in 0.1s;
-  left: 0px;
-}
-.slide img {
-  width: 100%;
-}
-.arrows {
-  position: relative;
-  margin: 0 auto;
-  width: 600px;
-}
-.arrow {
-  position: absolute;
-  cursor: pointer;
-}
-.no_active {
-  color: red;
-}
-.next {
-  right: 0;
-}
 .about-container-text {
   display: flex;
   justify-content: center;
@@ -537,5 +506,24 @@ lable {
   width: 1000px;
   margin-bottom: 20px;
   border: 1px solid red;
+}
+.nav-block {
+  background: #181c1f;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation {
+  color: white;
+  margin-left: 20px;
+  font-size: 11px;
+  text-decoration: none;
+}
+.nav-block-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 1000px;
 }
 /*# sourceMappingURL=style.css.map */

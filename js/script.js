@@ -129,7 +129,7 @@ if (mail =="" || pass =="") {
     if (mail == JSON.parse(localStorage.getItem("data")).userMail && pass == JSON.parse(localStorage.getItem("data")).userPass) {
         getData();
         document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+"Welcome  " + user + "  !   " + "</a>";
-        document.getElementById("logButtonNav").style.display = "none";
+        // document.getElementById("logButtonNav").style.display = "none";
         document.getElementById("regButtonNav").style.display = "none";
         document.getElementById("logOutButtonNav").style.display = "block";
         document.getElementById("userDataButtonNav").style.display = "block";
@@ -152,8 +152,8 @@ if (mail =="" || pass =="") {
 //Log out user.
 function logOutWin() {
     document.getElementById("userNameNav").innerHTML = "";
-    document.getElementById("container").style.display = "";
-    document.getElementById("logButtonNav").style.display = "block";
+    // document.getElementById("container").style.display = "";
+    // document.getElementById("logButtonNav").style.display = "block";
     document.getElementById("regButtonNav").style.display = "block";
     document.getElementById("logOutButtonNav").style.display = "none";
     document.getElementById("userDataText").innerHTML = "";
@@ -199,28 +199,28 @@ window.onload = function(){
 }
 //Function for modal windows - data user - END!
 
-//MAIN - carousel - START!
-var i = 0;
-var images = [];
-var time = 4000;
-
-images[0] = "img/mainFont.jpg";
-images[1] = "img/main3.jpg";
-images[2] = "img/main4.jpg";
-images[3] = "img/main1.jpg";
-
-function changeImg(){
-    document.slide.src = images[i];
-    if(i < images.length - 1){
-        i++;
-    } else {
-        i = 0;
-    }
-
-    setTimeout("changeImg()", time);
-}
-window.onload=changeImg;
-//MAIN - carousel - END!
+// //MAIN - carousel - START!
+// var i = 0;
+// var images = [];
+// var time = 4000;
+//
+// images[0] = "img/mainFont.jpg";
+// images[1] = "img/main3.jpg";
+// images[2] = "img/main4.jpg";
+// images[3] = "img/main1.jpg";
+//
+// function changeImg(){
+//     document.slide.src = images[i];
+//     if(i < images.length - 1){
+//         i++;
+//     } else {
+//         i = 0;
+//     }
+//
+//     setTimeout("changeImg()", time);
+// }
+// window.onload=changeImg;
+// //MAIN - carousel - END!
 
 // Change Modal Window : Registration and login - START!
 function changeModalWinLog() {
@@ -233,40 +233,11 @@ function changeModalWinSign() {
 }
 // Change Modal Window : Registration and login - END!
 
-//slider
-var next = document.getElementById('next');
-// var prew = document.getElementById('prew');
-
-var slides = document.getElementsByClassName('slide');
-for(var i=0; i<slides.length; i++){
-    slides[i].style.zIndex = (slides.length) - i;
+function modal(){
+        document.getElementById("line").style.display = "none";
+        document.getElementById("modal").style.display = "block";
 }
-
-function nextSlide() {
-    var activeEl = document.querySelector('.active');
-    if(activeEl.nextElementSibling) {
-        activeEl.style.left = "-100%";
-        activeEl.classList.remove('active');
-        activeEl.nextElementSibling.classList.add('active');
-        this.classList.remove('no_active');
-        prew.classList.remove('no_active');
-        if(!activeEl.nextElementSibling.nextElementSibling) {
-            this.classList.add('no_active');
-        }
-    }
+function under(){
+    document.getElementById("modal").style.display = "none";
+    document.getElementById("line").style.display = "block";
 }
-// function prewSlide() {
-//     var activeEl = document.querySelector('.active');
-//     if(activeEl.previousElementSibling) {
-//         activeEl.previousElementSibling.style.left = "0%";
-//         activeEl.classList.remove('active');
-//         activeEl.previousElementSibling.classList.add('active');
-//         this.classList.remove('no_active');
-//         next.classList.remove('no_active');
-//         if(!activeEl.previousElementSibling.previousElementSibling) {
-//             this.classList.add('no_active');
-//         }
-//     }
-// }
-window.onload=nextSlide;
-setTimeout("nextSlide()", 4000);
