@@ -1,4 +1,4 @@
-//Registration Window.
+//-------------------------------------------SIGN UP -  Modal Window.
 var modalReg = document.querySelector('.modalReg');
 var modalEnter = document.querySelector('.modalEnter');
 var overflow = document.createElement('div');
@@ -10,7 +10,7 @@ function openWin() {
     modalReg.style.top = "50%";
     closeWin();
 }
-//Close modal windows.
+//------------------------------------------Close  - modal Windows.
 function closeWin() {
     if (!Element.prototype.remove) {
         Element.prototype.remove = function remove() {
@@ -25,7 +25,7 @@ function closeWin() {
         overflow.remove();
     };
 }
-//Enter users.
+//--------------------------------------------LOG IN -  users.
 function openWinEnter() {
     overflow.className = "overflow";
     document.body.appendChild(overflow);
@@ -34,7 +34,7 @@ function openWinEnter() {
     modalEnter.style.top = "50%";
     closeWin();
 }
-//Validation rules.
+//---------------------------------------------Validation rules.
 var regMail = /^([a-zA-Z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
 var regName = /^([а-яА-Яa-zA-Z0-9_\-]{4})/;
 var regPass = /^([а-яА-Яa-zA-Z0-9_\-\!\@\+]{6})/;
@@ -112,7 +112,7 @@ function getData() {
     document.getElementById("userDataText").innerHTML = "NAME:  " + inputValueName;
     document.getElementById("MailDataText").innerHTML = "E-MAIL:  " + inputValueMail;
 }
-//Validation for registered users.
+//-----------------------------------------------------Validation for registered users.
 function validationEnter() {
     var mail = document.getElementById("mailEnter").value;
     var pass = document.getElementById("passwordEnter").value;
@@ -128,7 +128,7 @@ if (mail =="" || pass =="") {
 }
     if (mail == JSON.parse(localStorage.getItem("data")).userMail && pass == JSON.parse(localStorage.getItem("data")).userPass) {
         getData();
-        document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+"Welcome  " + user + "  !   " + "</a>";
+        document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+ user +"</a>";
         // document.getElementById("logButtonNav").style.display = "none";
         document.getElementById("regButtonNav").style.display = "none";
         document.getElementById("logOutButtonNav").style.display = "block";
@@ -149,7 +149,7 @@ if (mail =="" || pass =="") {
         }
     }
 }
-//Log out user.
+//------------------------------------------------------------------Log OUT user.
 function logOutWin() {
     document.getElementById("userNameNav").innerHTML = "";
     // document.getElementById("container").style.display = "";
@@ -161,7 +161,7 @@ function logOutWin() {
     document.getElementById("userTextMain").innerHTML = "";
     document.getElementById("userDataButtonNav").style.display = "none";
 }
-//Close modal windows - X
+//---------------------------------------------------------------Close modal windows - X - START!
 function closeFormWin() {
     document.getElementById("name").value = "";
     document.getElementById("mail").value = "";
@@ -180,9 +180,10 @@ function closeFormWin() {
     modalReg.style.top = "-100%";
     modalEnter.style.top = "-100%";
     overflow.remove();
-
 }
-//Function for modal windows - data user - START!
+//---------------------------------------------------------------Close modal windows - X - END!
+
+//--------------------------------------SHOW / HIDE -  modal windows - data user - START!
 window.onload = function(){
     document.querySelector('#userNameNav').onmouseover = menuShow;
     document.querySelector('#userNameNav').onmouseout = menuHide;
@@ -197,32 +198,9 @@ window.onload = function(){
         document.querySelector('#menu').style.left = '-230px';
     }
 }
-//Function for modal windows - data user - END!
+//--------------------------------------SHOW / HIDE -  modal windows - data user - END!
 
-// //MAIN - carousel - START!
-// var i = 0;
-// var images = [];
-// var time = 4000;
-//
-// images[0] = "img/mainFont.jpg";
-// images[1] = "img/main3.jpg";
-// images[2] = "img/main4.jpg";
-// images[3] = "img/main1.jpg";
-//
-// function changeImg(){
-//     document.slide.src = images[i];
-//     if(i < images.length - 1){
-//         i++;
-//     } else {
-//         i = 0;
-//     }
-//
-//     setTimeout("changeImg()", time);
-// }
-// window.onload=changeImg;
-// //MAIN - carousel - END!
-
-// Change Modal Window : Registration and login - START!
+// -----------------------------------Change Modal Window : Registration and login - START!
 function changeModalWinLog() {
     closeFormWin();
     openWinEnter();
@@ -231,13 +209,43 @@ function changeModalWinSign() {
     closeFormWin();
     openWin();
 }
-// Change Modal Window : Registration and login - END!
+// --------------------------------------Change Modal Window : Registration and login - END!
 
+// ----------------------------------------------------SWITCH DIV IN INDEX PAGE - START!
+function about(){
+    document.getElementById("slider").style.display = "none";
+    document.getElementById("infoBlock-index").style.display = "none";
+
+    document.getElementById("main-container-about").style.display = "block";
+    document.getElementById("infoBlock-about").style.display = "block";
+
+    document.getElementById("about-check-top").style.color = "#FD7013";
+    document.getElementById("about-check-bottom").style.color = "#FD7013";
+}
+function examples() {
+
+
+}
+function home() {
+
+    document.getElementById("main-container-about").style.display = "none";
+    document.getElementById("infoBlock-about").style.display = "none";
+
+    document.getElementById("slider").style.display = "block";
+    document.getElementById("infoBlock-index").style.display = "flex";
+
+    document.getElementById("about-check-top").style.color = "#505050";
+    document.getElementById("about-check-bottom").style.color = "#505050";
+}
+// ----------------------------------------------------SWITCH DIV IN INDEX PAGE - END!
+
+//-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - START!
 function modal(){
-        document.getElementById("line").style.display = "none";
-        document.getElementById("modal").style.display = "block";
+    document.getElementById("line").style.display = "none";
+    document.getElementById("modal").style.display = "block";
 }
 function under(){
     document.getElementById("modal").style.display = "none";
     document.getElementById("line").style.display = "block";
 }
+//-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - END!

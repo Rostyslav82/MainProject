@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COLLAPSE : Front-End component library </title>
+    <title>COLLAPSE : Front-End component library</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <script type="text/javascript" src="js/backTop.js"></script>
+    <script type="text/javascript" src="js/goUp.js"></script>
     <link rel="stylesheet" href="less/style.css">
-    <link rel="stylesheet" href="less/backTop.css">
+    <link rel="stylesheet" href="less/goUp.css">
     <link rel="stylesheet" href="less/style_example.css">
     <link rel="stylesheet" href="less/slider-main.css">
 </head>
 <body>
-<!--Navigation bar - START!-->
+<!--Navigation bar ----------------------------------------- START!-->
 <div class="container">
     <div class="nav">
             <div class="s1">
                 <div class = "text">
-                    <a href="index.html">
-                        <img class="logo" src="img/collapse1.png" title="HOME">
+                    <a onclick="home()">
+                        <img class="nav-logo-top" src="img/collapse-1.png" title="HOME">
                     </a>
                 </div>
             </div>
             <div>
                 <a class="underline" href="#"><span class="menuTextLeft">Documentation</span></a>
-                <a class="underline" href="examples.html"><span class="menuTextLeft">Examples</span></a>
+                <a class="underline" onclick="examples()"><span class="menuTextLeft">Examples</span></a>
             </div>
             <div class="s2">
                 <p id="userNameNav"></p>
             </div>
             <div class="nav_list">
-                <a class="underline" href="about.html"><span class="menuTextRight">ABOUT</span></a>
+                <a class="underline" onclick="about()"><span id="about-check-top" class="menuTextRight">ABOUT</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">NEWS</span></a>
@@ -38,14 +38,8 @@
             </div>
     </div>
 </div>
-<!--Navigation bar - END!-->
-<section class="nav-block">
-    <div class="nav-block-container">
-        <div class="navigation"><a class="navigation" href="index.html">HOME</a> &nbsp; &nbsp;  >> </div>
-    </div>
-</section>
-
-<!--Modal windows: Registration -->
+<!--Navigation bar ----------------------------------------- END!-->
+<!--Modal windows: -----------------------------------Registration -->
     <div class="modalReg">
         <div class="bord">
         <form action="" method="" id="id01">
@@ -65,7 +59,8 @@
         </form>
     </div>
 </div>
-<!--Modal Enter: Log in/Log out-->
+<!--Modal windows: -------------------------------------Registration-END!-->
+<!--Modal Enter: -------------------------------------Log in/Log out - START!-->
 <div class="modalEnter">
     <div class="bord">
         <form id="id02">
@@ -76,16 +71,15 @@
             <input name="mail" id="mailEnter"><br><br>
             <lable>Password</lable><br>
             <input type="password" name="password" id="passwordEnter"><br><br>
-            <input type="checkbox" name="agree" value="agree" style="width: 15px;"/>
-            <lable for="agree">I agree to terms.</lable><br><br><br>
             <p class="errorNote" id ="errorMailEnter"></p>
-            <p class="errorNote" id ="errorPassEnter"></p><br>
+            <p class="errorNote" id ="errorPassEnter"></p><br><br><br><br><br><br><br>
             <input type="button" class="formButton" value="LOG IN NOW" onclick="validationEnter()"><br>
             <p><a class="info" href="#">Forgot password?</a></p>
         </form>
     </div>
 </div>
-<!--Info Menu - Log in - user data-->
+<!--Modal Enter: -------------------------------------Log in/Log out - END!-->
+<!--Info Menu - Log in --------------------------------- user data - START!-->
     <div id="menu">
         <div class="con1">
             <p class="dataUserInfo s1 w1" id="userTextMain"></p><hr>
@@ -94,16 +88,19 @@
             <p class="dataUserInfo w1" id="PassDataText"></p>
         </div>
     </div>
-<!--Main Page - Slider START!-->
+<!--Info Menu - Log in --------------------------------- USER DATA - END!-->
+<!--Main Page - Slider ---------------------------------- START!-->
     <div id="slider">
         <div class="slides">
             <div class="slider">
                 <div class="legend"></div>
                 <div class="content">
-                    <div class="content-txt">
-                        <h1>COMPATIBILITY</h1>
-                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
-                    </div>
+                    <!--<div class="content-txt">-->
+                        <!--<h1>COMPATIBILITY</h1>-->
+                        <!--<h2>Nam ultrices pellentesque facilisis. In semper tellus mollis-->
+                            <!--nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor,-->
+                            <!--pretium sit amet auctor ut, ultrices vel nibh.</h2>-->
+                    <!--</div>-->
                 </div>
                 <div class="image">
                     <img src="img/mainFont.jpg">
@@ -112,10 +109,12 @@
             <div class="slider">
                 <div class="legend"></div>
                 <div class="content">
-                    <div class="content-txt">
-                        <h1>FUNCTIONALITY</h1>
-                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
-                    </div>
+                    <!--<div class="content-txt">-->
+                        <!--<h1>FUNCTIONALITY</h1>-->
+                        <!--<h2>Nam ultrices pellentesque facilisis. In semper tellus mollis-->
+                            <!--nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor,-->
+                            <!--pretium sit amet auctor ut, ultrices vel nibh.</h2>-->
+                    <!--</div>-->
                 </div>
                 <div class="image">
                     <img src="img/info1.gif">
@@ -124,10 +123,12 @@
             <div class="slider">
                 <div class="legend"></div>
                 <div class="content">
-                    <div class="content-txt">
-                        <h1>INNOVATION</h1>
-                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
-                    </div>
+                    <!--<div class="content-txt">-->
+                        <!--<h1>INNOVATION</h1>-->
+                        <!--<h2>Nam ultrices pellentesque facilisis. In semper tellus mollis-->
+                            <!--nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor,-->
+                            <!--pretium sit amet auctor ut, ultrices vel nibh.</h2>-->
+                    <!--</div>-->
                 </div>
                 <div class="image">
                     <img src="img/idea1.jpg">
@@ -136,10 +137,12 @@
             <div class="slider">
                 <div class="legend"></div>
                 <div class="content">
-                    <div class="content-txt">
-                        <h1>MODULARITY</h1>
-                        <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
-                    </div>
+                    <!--<div class="content-txt">-->
+                        <!--<h1>MODULARITY</h1>-->
+                        <!--<h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl -->
+                            <!--pulvinar vitae vulputate lorem consequat. Fusce odio tortor, -->
+                            <!--pretium sit amet auctor ut, ultrices vel nibh.</h2>-->
+                    <!--</div>-->
                 </div>
                 <div class="image">
                     <img src="img/puzzle.jpg">
@@ -147,10 +150,9 @@
             </div>
         </div>
     </div>
-<!--Main Page - Slider END!-->
-
-<!--Section Info Block-->
-<section class="infoBlock">
+<!--Main Page - Slider -------------------------------------------- END!-->
+<!--Section Info Block --------------------------------------------START!-->
+<section id="infoBlock-index" class="infoBlock">
     <div class="container-center">
         <div class="newsBlock">
             <div class="container-box">
@@ -175,7 +177,39 @@
         </div>
     </div>
 </section>
-<!--Section Footer Block-->
+<!--Section Info Block --------------------------------------------END!-->
+
+<!--ABOUT Page -------------------------------------------------- START!-->
+<!--ABOUT - Pictures main container - START!-->
+<div id="main-container-about" class="main-container" style="display: none">
+    <img id="p2" class="imgMain" src="img/main1.jpg">
+    <!--<p><h2 class="aboutMain"><span><a class="m1">Frameworks</a> - an infrastructure of software solutions that facilitates<span class="spacer"></span><br>-->
+    <!--<span class="spacer"></span>the development of complex systems. Simply put, this infrastructure can be<span class="spacer"></span><br>-->
+    <!--<span class="spacer"></span>considered a kind of integrated library, but it has a number of limitations<span class="spacer"></span><br>-->
+    <!--<span class="spacer"></span>that set the rules for creating a project structure and writing code.</span></h2></p>-->
+</div>
+<!--ABOUT - Pictures main container ----------- END!-->
+<!--ABOUT - Text container AND MAPS------------START!-->
+<section id="infoBlock-about" style="display: none">
+    <div class="infoBlock">
+        <div class="container-about-box">
+            <h1>ABOUT COLLAPSE</h1><br>
+            <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis
+                nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor,
+                pretium sit amet auctor ut, ultrices vel nibh.</h2>
+        </div>
+    </div>
+
+    <div class="infoBlock">
+        <div class="container-about-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29284.33087944379!2d25.571416665352377!3d49.55259579191784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473036ad4b82ce75%3A0xc484a447edb154e8!2z0KLQtdGA0L3QvtC_0ZbQu9GMLCDQotC10YDQvdC-0L_RltC70YzRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgNDYwMDE!5e0!3m2!1suk!2sua!4v1530645745574" width="1000" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<!--ABOUT - Text container AND MAPS----------- END!-->
+<!--ABOUT Page -------------------------------------------------------------- END!-->
+
+<!--Section ---------------------------------------------------FOOTER Block - START!-->
 <section class="foo-block">
     <div class="foo-container">
         <div class="foo-box foo-box-line">
@@ -194,22 +228,23 @@
         </div>
         <div class="foo-box">
             <div class="foo-item">
-                <a class="underline foo f2">ABOUT US</a>
-                <a class="underline" href="#"><span class="menuTextRight foo">COMPANY</span></a>
+                <a class="underline foo f2">COMPANY</a>
+                <a class="underline" onclick="about()"><span id="about-check-bottom" class="menuTextRight foo">ABOUT</span></a>
                 <a class="underline" href="#"><span class="menuTextRight foo">GALLERY</span></a>
                 <a class="underline" href="#"><span class="menuTextRight foo">SHOP</span></a>
             </div>
         </div>
         <div class="foo-box">
             <div class="foo-item">
-                <a><img src="img/collapse1.png"></a><br>
+                <a onclick="home()"><img class="footer-logo-bottom" src="img/collapse-2.png"></a><br>
                 <a class="foo">FRONT-END COMPONENT LIBRARY</a><br>
                 <a class="underline" href="#"><span class="menuTextRight foo"></span></a>
             </div>
         </div>
     </div>
 </section>
-<!--footer - info - menu-->
+<!--Section --------------------------------------------------------FOOTER Block - END!-->
+<!--FOOTER - info - ----------------------------------------------------menu - START!-->
 <footer>
     <div class="nav">
         <div>
@@ -224,11 +259,12 @@
             <p class="footer">© Copyright 2018 COLLAPSE. All rights reserved.</p>
         </div>
     </div>
-
 </footer>
+<!--FOOTER - info - ------------------------------------------------------menu - END!-->
 <!--My script-->
-<script type="text/javascript" src="js/script.js"></script>
-<!--Animation button - up!-->
+    <script type="text/javascript" src="js/script.js"></script>
+<!--Animation button -------------------------- GO up - START!-->
 <div id ="toTop" ><img class="upImg" src="img/icon_top.png" title="GO UP"> </div>
+<!--Animation button -------------------------- GO up - END!-->
 </body>
 </html>
