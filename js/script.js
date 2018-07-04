@@ -212,40 +212,73 @@ function changeModalWinSign() {
 // --------------------------------------Change Modal Window : Registration and login - END!
 
 // ----------------------------------------------------SWITCH DIV IN INDEX PAGE - START!
-function about(){
-    document.getElementById("slider").style.display = "none";
-    document.getElementById("infoBlock-index").style.display = "none";
-
-    document.getElementById("main-container-about").style.display = "block";
-    document.getElementById("infoBlock-about").style.display = "block";
-
-    document.getElementById("about-check-top").style.color = "#FD7013";
-    document.getElementById("about-check-bottom").style.color = "#FD7013";
-}
-function examples() {
-
-
-}
 function home() {
 
     document.getElementById("main-container-about").style.display = "none";
     document.getElementById("infoBlock-about").style.display = "none";
+
+    document.getElementById("main").style.display = "none";
+    document.getElementById("example-section").style.display = "none";
 
     document.getElementById("slider").style.display = "block";
     document.getElementById("infoBlock-index").style.display = "flex";
 
     document.getElementById("about-check-top").style.color = "#505050";
     document.getElementById("about-check-bottom").style.color = "#505050";
+
+    document.getElementById("example-check-top").style.color = "#a2a9af";
+    document.getElementById("example-check-bottom").style.color = "#a2a9af";
 }
 // ----------------------------------------------------SWITCH DIV IN INDEX PAGE - END!
 
 //-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - START!
+function about(){
+    document.getElementById("slider").style.display = "none";
+    document.getElementById("infoBlock-index").style.display = "none";
+
+    document.getElementById("main").style.display = "none";
+    document.getElementById("example-section").style.display = "none";
+
+    document.getElementById("main-container-about").style.display = "block";
+    document.getElementById("infoBlock-about").style.display = "block";
+
+    document.getElementById("about-check-top").style.color = "#FD7013";
+    document.getElementById("about-check-bottom").style.color = "#FD7013";
+
+    document.getElementById("example-check-top").style.color = "#a2a9af";
+    document.getElementById("example-check-bottom").style.color = "#a2a9af";
+}
+//-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - END!
+
+//-----------------------------------------------------SWITCH DIV IN EXAMPLE PAGE - START!
+function examples() {
+    document.getElementById("slider").style.display = "none";
+    document.getElementById("infoBlock-index").style.display = "none";
+
+    document.getElementById("main-container-about").style.display = "none";
+    document.getElementById("infoBlock-about").style.display = "none";
+
+    document.getElementById("main").style.display = "flex";
+    document.getElementById("example-section").style.display = "flex";
+
+    document.getElementById("about-check-top").style.color = "#505050";
+    document.getElementById("about-check-bottom").style.color = "#505050";
+
+    document.getElementById("example-check-top").style.color = "#FD7013";
+    document.getElementById("example-check-bottom").style.color = "#FD7013";
+}
 function modal(){
     document.getElementById("line").style.display = "none";
     document.getElementById("modal").style.display = "block";
+
+    document.getElementById("mod").style.color = "#FD7013";
+    document.getElementById("under").style.color = "#505050";
 }
 function under(){
     document.getElementById("modal").style.display = "none";
     document.getElementById("line").style.display = "block";
+
+    document.getElementById("under").style.color = "#FD7013";
+    document.getElementById("mod").style.color = "#505050";
 }
-//-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - END!
+//-----------------------------------------------------SWITCH DIV IN EXAMPLE PAGE - END!
