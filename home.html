@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121992777-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-121992777-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <meta charset="UTF-8">
     <meta property="og:image" content="img/small-logo.png" />
     <title>COLLAPSE : Front-End component library</title>
@@ -27,15 +36,15 @@
                 <a class="underline" href="#"><span class="menuTextLeft">Documentation</span></a>
                 <a class="underline" onclick="examples()"><span id="example-check-top" class="menuTextLeft">Examples</span></a>
             </div>
-            <div class="s2">
-                <p id="userNameNav"></p>
-            </div>
+        <div class="s2">
+        </div>
             <div class="nav_list">
                 <a class="underline" onclick="about()"><span id="about-check-top" class="menuTextRight">ABOUT</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">GALLERY</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">NEWS</span></a>
                 <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
+                    <p id="userNameNav"></p>
                 <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
             </div>
     </div>
