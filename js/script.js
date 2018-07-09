@@ -1,4 +1,4 @@
-//-------------------------------------------SIGN UP -  Modal Window.
+//-----------------------------------------------------------------------SIGN UP -  Modal Window.
 var modalReg = document.querySelector('.modalReg');
 var modalEnter = document.querySelector('.modalEnter');
 var overflow = document.createElement('div');
@@ -10,7 +10,7 @@ function openWin() {
     modalReg.style.top = "50%";
     closeWin();
 }
-//------------------------------------------Close  - modal Windows.
+//----------------------------------------------------------------------Close  - modal Windows.
 function closeWin() {
     if (!Element.prototype.remove) {
         Element.prototype.remove = function remove() {
@@ -25,7 +25,7 @@ function closeWin() {
         overflow.remove();
     };
 }
-//--------------------------------------------LOG IN -  users.
+//--------------------------------------------------------------------------LOG IN -  users.
 function openWinEnter() {
     overflow.className = "overflow";
     document.body.appendChild(overflow);
@@ -34,45 +34,40 @@ function openWinEnter() {
     modalEnter.style.top = "50%";
     closeWin();
 }
-//---------------------------------------------Validation rules.
+//------------------------------------------------------------------------Validation rules.
 var regMail = /^([a-zA-Z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
 var regName = /^([а-яА-Яa-zA-Z0-9_\-]{4})/;
 var regPass = /^([а-яА-Яa-zA-Z0-9_\-\!\@\+]{6})/;
-//Validation the entered data by the user.
+//----------------------------------------------------------------Validation the entered data by the user.
 function validate() {
     var name = document.getElementById("name").value;
     var mail = document.getElementById("mail").value;
     var pass = document.getElementById("password").value;
     var repPass = document.getElementById("repPassword").value;
-
     if (name.length < 0 || regName.test(name) == false){
         document.getElementById("name").className = "error";
         document.getElementById("errorName").innerHTML = "Bad name. Please try again.";
         return false;
     }
     document.getElementById("name").className = "";
-    //document.getElementById("errorName").innerHTML = "";
     if(pass.length < 0 || regPass.test(pass) == false){
         document.getElementById("password").className = "error";
         document.getElementById("errorName").innerHTML = "Bad pass. Please try again.";
         return false;
     }
     document.getElementById("password").className = "";
-    //document.getElementById("errorPass").innerHTML = "";
     if(regPass.length < 0 || pass !== repPass){
         document.getElementById("repPassword").className = "error";
         document.getElementById("errorName").innerHTML = "Bad re-pass. Please try again.";
         return false;
     }
     document.getElementById("repPassword").className = "";
-    //document.getElementById("errorPass").innerHTML = "";
    if(mail.length < 0 || regMail.test(mail) == false){
        document.getElementById("mail").className = "error";
        document.getElementById("errorName").innerHTML = "Bad e-mail. Please try again.";
        return false;
    }
     document.getElementById("mail").className = "";
-    //document.getElementById("errorMail").innerHTML = "";
     if (true) {
         alert(" ВІТАЄМО " + name + " ! Ви успішно зареєструвались. ");
         setData();
@@ -85,20 +80,16 @@ function validate() {
         document.getElementById("password").className = "";
         document.getElementById("repPassword").className = "";
         document.getElementById("errorName").innerHTML = "";
-        //document.getElementById("errorMail").innerHTML = "";
-        //document.getElementById("errorPass").innerHTML = "";
         closeFormWin();
         openWinEnter();
     }
 }
-//Put entered user data in localStorage.
+//---------------------------------------------------------Put entered user data in localStorage.
 function setData (){
-    console.log ("Відправка даних на сервер...");
     var name = document.getElementById("name").value;
     var mail = document.getElementById("mail").value;
     var pass = document.getElementById("password").value;
     var data = {userName: name, userMail: mail, userPass: pass};
-
     var stringData = JSON.stringify(data);
     localStorage.setItem("data", stringData);
 }
@@ -112,7 +103,7 @@ function getData() {
     document.getElementById("userDataText").innerHTML = "NAME:  " + inputValueName;
     document.getElementById("MailDataText").innerHTML = "E-MAIL:  " + inputValueMail;
 }
-//-----------------------------------------------------Validation for registered users.
+//----------------------------------------------------------Validation for registered users.
 function validationEnter() {
     var mail = document.getElementById("mailEnter").value;
     var pass = document.getElementById("passwordEnter").value;
@@ -129,7 +120,6 @@ if (mail =="" || pass =="") {
     if (mail == JSON.parse(localStorage.getItem("data")).userMail && pass == JSON.parse(localStorage.getItem("data")).userPass) {
         getData();
         document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+ user +"</a>";
-        // document.getElementById("logButtonNav").style.display = "none";
         document.getElementById("regButtonNav").style.display = "none";
         document.getElementById("logOutButtonNav").style.display = "block";
         document.getElementById("userDataButtonNav").style.display = "block";
@@ -149,11 +139,9 @@ if (mail =="" || pass =="") {
         }
     }
 }
-//------------------------------------------------------------------Log OUT user.
+//----------------------------------------------------------------------Log OUT user.
 function logOutWin() {
     document.getElementById("userNameNav").innerHTML = "";
-    // document.getElementById("container").style.display = "";
-    // document.getElementById("logButtonNav").style.display = "block";
     document.getElementById("regButtonNav").style.display = "block";
     document.getElementById("logOutButtonNav").style.display = "none";
     document.getElementById("userDataText").innerHTML = "";
@@ -172,7 +160,6 @@ function closeFormWin() {
     document.getElementById("password").className = "";
     document.getElementById("repPassword").className = "";
     document.getElementById("errorName").innerHTML = "";
-
     document.getElementById("mailEnter").value = "";
     document.getElementById("passwordEnter").value = "";
     document.getElementById("passwordEnter").className = "";
@@ -181,26 +168,24 @@ function closeFormWin() {
     modalEnter.style.top = "-100%";
     overflow.remove();
 }
-//---------------------------------------------------------------Close modal windows - X - END!
-
-//--------------------------------------SHOW / HIDE -  modal windows - data user - START!
-window.onload = function(){
-    document.querySelector('#userNameNav').onmouseover = menuShow;
-    document.querySelector('#userNameNav').onmouseout = menuHide;
-    document.onmouseout = function (event) {
-        console.log(event);
-    }
-
-    function menuShow(){
-        document.querySelector('#menu').style.left = '0';
-    }
-    function menuHide(){
-        document.querySelector('#menu').style.left = '-230px';
-    }
-}
-//--------------------------------------SHOW / HIDE -  modal windows - data user - END!
-
-// -----------------------------------Change Modal Window : Registration and login - START!
+//------------------------------------------------------------------Close modal windows - X - END!
+//--------------------------------------------------------SHOW / HIDE -  modal windows - data user - START!
+// window.onload = function(){
+//     document.querySelector('#userNameNav').onmouseover = menuShow;
+//     document.querySelector('#userNameNav').onmouseout = menuHide;
+//     document.onmouseout = function (event) {
+//         console.log(event);
+//     }
+//
+//     function menuShow(){
+//         document.querySelector('#menu').style.left = '0';
+//     }
+//     function menuHide(){
+//         document.querySelector('#menu').style.left = '-230px';
+//     }
+// }
+//---------------------------------------------------------SHOW / HIDE -  modal windows - data user - END!
+// -----------------------------------------------------Change Modal Window : Registration and login - START!
 function changeModalWinLog() {
     closeFormWin();
     openWinEnter();
@@ -209,83 +194,58 @@ function changeModalWinSign() {
     closeFormWin();
     openWin();
 }
-// --------------------------------------Change Modal Window : Registration and login - END!
-
-// ----------------------------------------------------SWITCH DIV IN INDEX PAGE - START!
+// -----------------------------------------------------Change Modal Window : Registration and login - END!
+// -----------------------------------------------------------SWITCH DIV IN INDEX PAGE - START!
 function home() {
-
     document.getElementById("main-container-about").style.display = "none";
     document.getElementById("infoBlock-about").style.display = "none";
-
     document.getElementById("main").style.display = "none";
     document.getElementById("example-section").style.display = "none";
-
     document.getElementById("slider").style.display = "block";
     document.getElementById("infoBlock-index").style.display = "flex";
-
     document.getElementById("about-check-top").style.color = "#505050";
     document.getElementById("about-check-bottom").style.color = "#505050";
-
     document.getElementById("example-check-top").style.color = "#a2a9af";
     document.getElementById("example-check-bottom").style.color = "#a2a9af";
 }
 // ----------------------------------------------------SWITCH DIV IN INDEX PAGE - END!
-
 //-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - START!
 function about(){
     document.getElementById("slider").style.display = "none";
     document.getElementById("infoBlock-index").style.display = "none";
-
     document.getElementById("main").style.display = "none";
     document.getElementById("example-section").style.display = "none";
-
     document.getElementById("main-container-about").style.display = "block";
     document.getElementById("infoBlock-about").style.display = "block";
-
     document.getElementById("about-check-top").style.color = "#FD7013";
     document.getElementById("about-check-bottom").style.color = "#FD7013";
-
     document.getElementById("example-check-top").style.color = "#a2a9af";
     document.getElementById("example-check-bottom").style.color = "#a2a9af";
 }
 //-----------------------------------------------------SWITCH DIV IN ABOUT PAGE - END!
-
 //-----------------------------------------------------SWITCH DIV IN EXAMPLE PAGE - START!
 function examples() {
     document.getElementById("slider").style.display = "none";
     document.getElementById("infoBlock-index").style.display = "none";
-
     document.getElementById("main-container-about").style.display = "none";
     document.getElementById("infoBlock-about").style.display = "none";
-
     document.getElementById("main").style.display = "flex";
     document.getElementById("example-section").style.display = "flex";
-
     document.getElementById("about-check-top").style.color = "#505050";
     document.getElementById("about-check-bottom").style.color = "#505050";
-
     document.getElementById("example-check-top").style.color = "#FD7013";
     document.getElementById("example-check-bottom").style.color = "#FD7013";
 }
 function modal(){
     document.getElementById("line").style.display = "none";
     document.getElementById("modal").style.display = "block";
-
     document.getElementById("mod").style.color = "#FD7013";
     document.getElementById("under").style.color = "#505050";
 }
 function under(){
     document.getElementById("modal").style.display = "none";
     document.getElementById("line").style.display = "block";
-
     document.getElementById("under").style.color = "#FD7013";
     document.getElementById("mod").style.color = "#505050";
 }
 //-----------------------------------------------------SWITCH DIV IN EXAMPLE PAGE - END!
-// $.ajax({
-//     url:'http://freegeoip.net/json/'
-//     type:'get',
-//     dataType:'json'
-// }).done(function(data) {
-//     alert(data.ip);
-// });

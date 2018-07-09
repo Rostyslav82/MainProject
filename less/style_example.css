@@ -16,6 +16,7 @@
   align-items: start;
   flex-direction: column;
   width: 300px;
+  margin-top: 30px;
 }
 .example-box {
   width: 700px;
@@ -57,6 +58,7 @@
 }
 .example-item-code {
   display: flex;
+  justify-content: space-between;
   width: 600px;
   height: 250px;
   border-left: 10px solid grey;
@@ -70,5 +72,9 @@
 }
 .example-img-modal {
   width: 250px;
+}
+.downLoadImg {
+  margin-right: 5px;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=style_example.css.map */
