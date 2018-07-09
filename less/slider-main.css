@@ -350,4 +350,18 @@
     margin-left: 45px;
   }
 }
+.slider-main-section {
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-main-container-center {
+  display: flex;
+  width: 1000px;
+  margin-top: 590px;
+}
+.slider-main-text {
+  color: white;
+}
 /*# sourceMappingURL=slider-main.css.map */
