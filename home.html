@@ -11,14 +11,8 @@
     <link rel="stylesheet" href="less/style_about.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/goUp.js"></script>
-
+    <script type="text/javascript" src="js/Analytics.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121992777-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-121992777-1');
-    </script>
 </head>
 <body>
 <!--Navigation bar ----------------------------------------- START!-->
@@ -33,7 +27,7 @@
             </div>
             <div>
                 <a class="underline" href="#"><span class="menuTextLeft">Documentation</span></a>
-                <a class="underline" onclick="examples()"><span id="example-check-top" class="menuTextLeft">Examples</span></a>
+                <a id="exampleOffNav" class="underline"><span id="example-check-top" class="menuTextLeft">Examples</span></a>
             </div>
         <div class="s2">
         </div>
@@ -43,8 +37,8 @@
                 <a class="underline" href="#"><span class="menuTextRight">SHOP</span></a>
                 <a class="underline" href="#"><span class="menuTextRight">NEWS</span></a>
                 <button id="regButtonNav" class="regButton" onclick="openWin()">SIGN UP</button>
-                    <p id="userNameNav"></p>
                 <button id="logOutButtonNav" class="regButton" onclick="logOutWin()" style="display: none">LOG OUT</button>
+                <p id="userNameNav"></p>
             </div>
     </div>
 </div>
@@ -107,8 +101,8 @@
                 <div class="content">
                         <div class="slider-main-section">
                             <div class="slider-main-container-center">
-                                <h2 class="slider-main-text">САЙТ ЗНАХОДИТЬСЯ НА СТАДІЇ РЕКОНСТРУКЦІЇ.
-                                АКТИВНІ СИЛКИ ДЛЯ ПЕРЕГЛЯДУ: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
+                                <h2 class="slider-main-text">THE SITE IS UNDER DEVELOPMENT.
+                                    ACTIVE LINKS: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
                             </div>
                         </div>
                     <!--<div class="content-txt">-->
@@ -127,8 +121,8 @@
                 <div class="content">
                     <div class="slider-main-section">
                         <div class="slider-main-container-center">
-                            <h2 class="slider-main-text">САЙТ ЗНАХОДИТЬСЯ НА СТАДІЇ РЕКОНСТРУКЦІЇ.
-                                АКТИВНІ СИЛКИ ДЛЯ ПЕРЕГЛЯДУ: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
+                            <h2 class="slider-main-text">THE SITE IS UNDER DEVELOPMENT.
+                                ACTIVE LINKS: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
                         </div>
                     </div>
                     <!--<div class="content-txt">-->
@@ -147,8 +141,8 @@
                 <div class="content">
                     <div class="slider-main-section">
                         <div class="slider-main-container-center">
-                            <h2 class="slider-main-text">САЙТ ЗНАХОДИТЬСЯ НА СТАДІЇ РЕКОНСТРУКЦІЇ.
-                                АКТИВНІ СИЛКИ ДЛЯ ПЕРЕГЛЯДУ: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
+                            <h2 class="slider-main-text">THE SITE IS UNDER DEVELOPMENT.
+                                ACTIVE LINKS: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
                         </div>
                     </div>
                     <!--<div class="content-txt">-->
@@ -167,8 +161,8 @@
                 <div class="content">
                     <div class="slider-main-section">
                         <div class="slider-main-container-center">
-                                <h2 class="slider-main-text">САЙТ ЗНАХОДИТЬСЯ НА СТАДІЇ РЕКОНСТРУКЦІЇ.
-                                АКТИВНІ СИЛКИ ДЛЯ ПЕРЕГЛЯДУ: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
+                                <h2 class="slider-main-text">THE SITE IS UNDER DEVELOPMENT.
+                                ACTIVE LINKS: ABOUT AND EXAMPLE >> UnderLine, ModalWindows.</h2>
                         </div>
                     </div>
                     <!--<div class="content-txt">-->
@@ -328,7 +322,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                         }
                     </p>
-                    <a href="download/style.7z" download>
+                    <a href="download/underLine.7z" download>
                         <img class="downLoadImg" src="img/dl-1.png" width="20" height="20" title="Download">
                     </a>
                 </div>
@@ -377,18 +371,43 @@
                     whereas premier resources. Compellingly deliver innovative quality
                     vectors without cooperative technology. Dramatically grow highly
                     efficient </h4>
-                <div class="example-item-code">
-                    <p class="example-item-text">.menuTextLeft{<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;color: #a2a9af;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;font-size:15px;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;margin-right: 15px;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration:none;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:hover{<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 2px solid yellow;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: 0.1s ease-in;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                <div class="example-item-code-modal">
+                    <p class="example-item-text-modal"><br>
+                        //-----------------------------------------------------------------------SIGN UP -  Modal Window.<br>
+                        var modalReg = document.querySelector('.modalReg');<br>
+                        var modalEnter = document.querySelector('.modalEnter');<br>
+                        var overflow = document.createElement('div');<br>
+                        function openWin() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow.className = "overflow";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(overflow);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var height = modalReg.offsetHeight;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalReg.style.marginTop = - height / 2 + "px";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalReg.style.top = "50%";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closeWin();<br>
+                        }<br>
+                        //----------------------------------------------------------------------Close  - modal Windows.<br>
+                        function closeWin() {<br>
+                        &nbsp;&nbsp;&nbsp;if (!Element.prototype.remove) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element.prototype.remove = function remove() {<br>
+                        &nbsp;&nbsp;&nbsp;if (this.parentNode) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.parentNode.removeChild(this);<br>
+                        }<br>
+                        };<br>
+                        }<br>
+                        overflow.onclick = function () {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalReg.style.top = "-100%";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalEnter.style.top = "-100%";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow.remove();<br>
+                        };<br>
+                        }<br>
+                        //--------------------------------------------------------------------------LOG IN -  users.<br>
+                        function openWinEnter() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow.className = "overflow";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(overflow);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var height = modalEnter.offsetHeight;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalEnter.style.marginTop = - height / 2 + "px";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modalEnter.style.top = "50%";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closeWin();<br>
                         }
                     </p>
                     <a href="download/style.7z" download>
@@ -421,7 +440,7 @@
         <div class="foo-box foo-box-line">
             <div class="foo-item">
                 <a class="underline" href="#"><span class="menuTextLeft foo">DOCUMENTATION</span></a><br>
-                <a class="underline" onclick="examples()"><span id="example-check-bottom" class="menuTextLeft foo">EXAMPLES</span></a>
+                <a id="exampleOffFut" class="underline" href="#"><span id="example-check-bottom" class="menuTextLeft foo">EXAMPLES</span></a>
             </div>
         </div>
         <div class="foo-box">
@@ -435,14 +454,14 @@
         <div class="foo-box">
             <div class="foo-item">
                 <a class="underline foo f2">COMPANY</a>
-                <a class="underline" onclick="about()"><span id="about-check-bottom" class="menuTextRight foo">ABOUT</span></a>
+                <a class="underline" href="#" onclick="about()"><span id="about-check-bottom" class="menuTextRight foo">ABOUT</span></a>
                 <a class="underline" href="#"><span class="menuTextRight foo">GALLERY</span></a>
                 <a class="underline" href="#"><span class="menuTextRight foo">SHOP</span></a>
             </div>
         </div>
         <div class="foo-box">
             <div class="foo-item">
-                <a onclick="home()"><img class="footer-logo-bottom" src="img/collapse-3.png"></a><br>
+                <a onclick="home()"><img class="footer-logo-bottom" src="img/collapse-3.png" title="HOME"></a><br>
                 <a class="foo">FRONT-END COMPONENT LIBRARY</a><br>
                 <a class="underline" href="#"><span class="menuTextRight foo"></span></a>
             </div>

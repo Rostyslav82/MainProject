@@ -119,7 +119,7 @@ if (mail =="" || pass =="") {
 }
     if (mail == JSON.parse(localStorage.getItem("data")).userMail && pass == JSON.parse(localStorage.getItem("data")).userPass) {
         getData();
-        document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+ user +"</a>";
+        document.getElementById("userNameNav").innerHTML = "<img class=\"userIcon\" src=\"img\\user-icon3.png\"><a id=\"userDataButtonNav\"class=\"butData\"style=\"display: none\">"+"</a>";
         document.getElementById("regButtonNav").style.display = "none";
         document.getElementById("logOutButtonNav").style.display = "block";
         document.getElementById("userDataButtonNav").style.display = "block";
@@ -127,10 +127,10 @@ if (mail =="" || pass =="") {
         document.getElementById("passwordEnter").value = "";
         document.getElementById("passwordEnter").className = "";
         document.getElementById("errorMailEnter").innerHTML = "";
-
-        if (true){
+        userConnect();
+        // if (true){
             closeFormWin();
-        }
+        // }
     } else {
         if (mail.length > 2){
             document.getElementById("mailEnter").className = "";
@@ -141,13 +141,15 @@ if (mail =="" || pass =="") {
 }
 //----------------------------------------------------------------------Log OUT user.
 function logOutWin() {
+    userDisConnect();
+    home();
     document.getElementById("userNameNav").innerHTML = "";
     document.getElementById("regButtonNav").style.display = "block";
     document.getElementById("logOutButtonNav").style.display = "none";
     document.getElementById("userDataText").innerHTML = "";
     document.getElementById("MailDataText").innerHTML = "";
     document.getElementById("userTextMain").innerHTML = "";
-    document.getElementById("userDataButtonNav").style.display = "none";
+    //document.getElementById("userDataButtonNav").style.display = "none";
 }
 //---------------------------------------------------------------Close modal windows - X - START!
 function closeFormWin() {
@@ -176,7 +178,6 @@ function closeFormWin() {
 //     document.onmouseout = function (event) {
 //         console.log(event);
 //     }
-//
 //     function menuShow(){
 //         document.querySelector('#menu').style.left = '0';
 //     }
@@ -249,3 +250,19 @@ function under(){
     document.getElementById("mod").style.color = "#505050";
 }
 //-----------------------------------------------------SWITCH DIV IN EXAMPLE PAGE - END!
+//------------------------------------------------------------close and open EXAMPLE page - START!
+window.onload = function (){
+    userDisConnect();
+}
+function userDisConnect(){
+    document.getElementById("exampleOffNav").setAttribute("onclick", "alertDisConnect()");
+    document.getElementById("exampleOffFut").setAttribute("onclick", "alertDisConnect()");
+}
+function userConnect() {
+    document.getElementById("exampleOffNav").setAttribute("onclick", "examples()");
+    document.getElementById("exampleOffFut").setAttribute("onclick", "examples()");
+}
+function alertDisConnect() {
+    openWin();
+}
+//------------------------------------------------------------close and open EXAMPLE page - END!
