@@ -1,4 +1,7 @@
-.idea/*
-node_modules/*
-gulpfile.js/*
+.idea/
+node_modules/
+gulpfile.js
+build/
+package-lock.json
+
 
